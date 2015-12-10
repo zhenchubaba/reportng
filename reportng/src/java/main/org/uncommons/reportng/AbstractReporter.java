@@ -94,7 +94,7 @@ public abstract class AbstractReporter implements IReporter {
 	protected void generateFile(File file, String templateName, VelocityContext context) throws Exception {
 		// Writer writer = new BufferedWriter(new FileWriter(file));
 		// encoding to utf-8
-		OutputStream out = new FileOutputStream(file);
+		FileOutputStream out = new FileOutputStream(file);
 		Writer writer = new BufferedWriter(new OutputStreamWriter(out, "utf-8"));
 		try {
 			Velocity.mergeTemplate(classpathPrefix + templateName, ENCODING, context, writer);
